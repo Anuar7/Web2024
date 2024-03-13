@@ -1,0 +1,14 @@
+<ul *ngIf="loaded">
+  <h2>Photos</h2>
+  <button (click)="goBack()">Go Back</button>
+  <button (click)="sortAcs()">Asc</button>
+  <button (click)="sortDesc()">Desc</button>
+  <li *ngFor="let photos of photos">
+    <p>AlbumId: {{photos.albumId}}</p>
+    <p>Id: {{photos.id}}</p>
+    <p>Title: {{photos.title}}</p>
+    <p><img alt="" src="{{photos.thumbnailUrl}}"></p>
+    <p><img alt="" src="{{photos.url}}"></p>
+  </li>
+</ul>
+<p *ngIf="!loaded">Loading photos...</p>
